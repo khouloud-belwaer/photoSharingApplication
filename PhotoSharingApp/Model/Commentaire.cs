@@ -7,5 +7,10 @@ namespace PhotoSharingApp.Model
 {
     public class Commentaire
     {
+        public int CommentID { get; set; }
+        public String User { get; set; }
+        public String Subject { get; set; } 
+        public String Body { get; set; }
+        public int PhotosID { get; set; }
     }
 }
