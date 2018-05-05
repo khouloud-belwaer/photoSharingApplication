@@ -15,7 +15,7 @@ namespace PhotoSharingApp.Model
         public Byte [] PhotoFile{ get; set; }
         public virtual ICollection<Commentaire> Commentaires { get; set; }
 
-
+     
 
     }
 }
