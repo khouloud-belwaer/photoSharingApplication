@@ -38,3 +38,5 @@ C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\System.Web.WebPage
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.csprojResolveAssemblyReference.cache
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.pdb
+C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.dll
+C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.xml
