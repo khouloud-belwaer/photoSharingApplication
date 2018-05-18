@@ -10,8 +10,10 @@ namespace PhotoSharingApp.Model
     public class Photo
     {
         public int PhotoID { get; set; }
+        [Required]
         public String Title { get; set; }
         [DisplayName("Picture")]
+        [DataType(DataType.MultilineText)]
         public String Description { get; set; }
         [DataType(DataType.DateTime)]
         [DisplayName("Created Date")]
@@ -22,6 +24,7 @@ namespace PhotoSharingApp.Model
         [DataType(DataType.MultilineText)]
         public virtual ICollection<Commentaire> Commentaires { get; set; }
         public string ImageMimeType { get; set; }
+
 
 
 
