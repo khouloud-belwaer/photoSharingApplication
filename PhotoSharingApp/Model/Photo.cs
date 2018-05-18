@@ -19,7 +19,7 @@ namespace PhotoSharingApp.Model
         [DisplayName("Created Date")]
         [DisplayFormat(DataFormatString="{0:MM/dd/yy}",ApplyFormatInEditMode = true)]
         public DateTime CreatedDate { get; set; }
-        public String Owner { get; set; }
+        public String UserName { get; set; }
         public byte [] PhotoFile{ get; set; }
         [DataType(DataType.MultilineText)]
         public virtual ICollection<Commentaire> Commentaires { get; set; }
