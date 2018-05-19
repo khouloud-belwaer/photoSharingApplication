@@ -19,19 +19,37 @@ namespace PhotoSharingApp.Controllers
        
         public ActionResult Index()
         {
-            
-            return View(context.Photos.ToList());
+            return View("Index");
         }
 
-
-        public ActionResult Display(int id)
-        { 
-           List<Photo> photos = context.Photos.ToList();
-           var verif = photos.Find(photo => photo.PhotoID == id);
-            if (verif != null)
-                return View("Display", verif);
+        [ChildActionOnly]
+        public ActionResult _PhotoGallery
+  (int number = 0)
+        {
+            List<Photo> photos;
+            if (number == 0)
+            {
+                photos = context.Photos.ToList();
+            }
             else
+            {
+                photos = (
+                      from p in context.Photos
+                      orderby p.CreatedDate descending
+                      select p).Take(number).ToList();
+            }
+            return PartialView("_PhotoGallery",
+   photos);
+        }
+        public ActionResult Display(int id)
+        {
+            Photo photo =
+    context.Photos.Find(id);
+            if (photo == null)
+            {
                 return HttpNotFound();
+            }
+            return View("Display", photo);
         }
         public ActionResult Create()
         {

@@ -3,46 +3,19 @@
 
 <html>
 <head>
+    <title>All Photos</title>
+</head>
+<body>
     <div>
-        <h4>Photo</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.CreatedDate)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CreatedDate)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.UserName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.UserName)
-            </dd>
-
-
-
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Display", "Display", new { id = Model.PhotoID })
-    </p>
+        <h2>All Photos</h2>
+        <p>
+            @Html.ActionLink("Add a Photo",
+      "Create", "Photo")
+        </p>
+        <p>
+            @Html.ActionLink("_PhotoGallery", "_PhotoGallery", "Photo")
+        </p>
+   
+</body>
+</html>
