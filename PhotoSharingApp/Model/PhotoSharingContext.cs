@@ -1,11 +1,11 @@
-﻿using PhotoSharingApp.Model;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace PhotoSharingApp.Models
+namespace PhotoSharingApp.Model
 {
     public class PhotoSharingContext : DbContext
     {

@@ -1,12 +1,13 @@
 ﻿using PhotoSharingApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace PhotoSharingApp.Models
+namespace PhotoSharingApp.Model
 {
     public class PhotoSharingInitializer : DropCreateDatabaseAlways<PhotoSharingContext> 
     {
@@ -23,12 +24,13 @@ namespace PhotoSharingApp.Models
             photo.PhotoFile = System.IO.File.ReadAllBytes("\\Users\\khouloud\\photoSharingApplication\\PhotoSharingApp\\NewFolder1\\a.jpg");
             photo.ImageMimeType =
                      "image/jpeg";
-           photos.ForEach(p =>
-            context.Photos.Add(p));
+            foreach (var p in photos)
+                           {
+                context.Photos.Add(p);
+                           }
             context.SaveChanges();
 
-            
-         List<Commentaire> commentaire = new List<Commentaire>();
+            List<Commentaire> commentaire = new List<Commentaire>();
 
             Commentaire comment = new Commentaire();
                 comment.PhotoID = 1;
@@ -38,13 +40,13 @@ namespace PhotoSharingApp.Models
 
 
 
-           commentaire.ForEach(c =>
-            context.Commentaire.Add(c));
+            foreach (var c in commentaire)
+            {
+                context.Commentaire.Add(c);
+            }
             context.SaveChanges();
 
 
-
-            base.Seed(context);
         }
 
        

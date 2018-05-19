@@ -1,16 +1,16 @@
 ﻿using PhotoSharingApp.Model;
 using System.Collections.Generic;
 using System.Globalization;
-using PhotoSharingApp.Models;
+using System.ComponentModel;
 using System;
 
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data;
-using PhotoSharingApp.Controllers;
 
-namespace PhotoSharingApp.Controllor
+
+namespace PhotoSharingApp.Controllers
 {
     [ValueReporter]
     public class PhotoController : Controller
@@ -19,6 +19,7 @@ namespace PhotoSharingApp.Controllor
        
         public ActionResult Index()
         {
+            
             return View(context.Photos.ToList());
         }
 
