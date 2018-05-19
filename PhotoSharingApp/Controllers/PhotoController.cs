@@ -26,7 +26,7 @@ namespace PhotoSharingApp.Controllers
         public ActionResult _PhotoGallery
   (int number = 0)
         {
-            List<Photo> photos;
+            List<Photo> photos = new List<Photo>();
             if (number == 0)
             {
                 photos = context.Photos.ToList();

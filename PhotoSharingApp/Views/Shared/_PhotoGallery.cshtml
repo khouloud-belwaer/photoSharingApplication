@@ -1,15 +1,5 @@
-﻿@model  IEnumerable 
-<PhotoSharingApp.Model.Photo> 
-
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_PhotoGallery</title>
-</head>
-<body>
+﻿@model  IEnumerable
+<PhotoSharingApp.Model.Photo>
     @foreach (var item in Model)
     { <h3>"@item.Title"</h3>
         if (item.PhotoFile != null)
@@ -31,9 +21,19 @@
         </p>
 
     }
-
-    @Html.ActionLink("Display", "Display",
+    <body>
+        @Html.ActionLink("Display", "Display",
 new { id = Model.PhotoID })
+
+
+        <!DOCTYPE html>
+
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>_PhotoGallery</title>
+        </head>
+
 
 </body>
 </html>
