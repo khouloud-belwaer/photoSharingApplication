@@ -8,13 +8,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data;
+using PhotoSharingApp.Controllers;
 
 namespace PhotoSharingApp.Controllor
 {
+    [ValueReporter]
     public class PhotoController : Controller
     {
         PhotoSharingContext context = new PhotoSharingContext();
-        // GET: Photo
+       
         public ActionResult Index()
         {
             return View(context.Photos.ToList());
