@@ -12,6 +12,7 @@ using System.Data;
 
 namespace PhotoSharingApp.Controllers
 {
+    [HandleError(View = "Error")]
     [ValueReporter]
     public class PhotoController : Controller
     {
@@ -130,7 +131,11 @@ Photo photo = context.FindPhotoById(id);
                 return null;
             }
         }
-     }
+        public ActionResult SlideShow()
+        {
+            throw new NotImplementedException("The SlideShow action is not yet ready");
+        }
+    }
      
          
          

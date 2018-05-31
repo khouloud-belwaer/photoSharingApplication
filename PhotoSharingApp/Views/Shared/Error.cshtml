@@ -1,4 +1,5 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
+
 @{
     Layout = null;
 }
@@ -7,9 +8,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+    <title>Custom Error</title>
 </head>
 <body>
+    <h1>MVC Error</h1> 
+    Controller: @Model.ControllerName <br /> 
+    Action: @Model.ActionName <br />
+    Message: @Model.Exception.Message
+    
     <hgroup>
         <h1 class="text-danger">Error.</h1>
         <h2 class="text-danger">An error occurred while processing your request.</h2>
