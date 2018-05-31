@@ -15,8 +15,15 @@ namespace PhotoSharingApp.Controllers
     [ValueReporter]
     public class PhotoController : Controller
     {
-        private PhotoSharingContext context =
-    new PhotoSharingContext();
+        private IPhotoSharingContext context;
+        public PhotoController()
+        {
+            context = new PhotoSharingContext();
+        }
+        public PhotoController(IPhotoSharingContext Context)
+        {
+            context = Context;
+        }
 
         public ActionResult Index()
         {
@@ -46,8 +53,7 @@ namespace PhotoSharingApp.Controllers
 
         public ActionResult Display(int id)
         {
-            Photo photo =
-                   context.Photos.Find(id);
+                 Photo photo = context.FindPhotoById(id);
             if (photo == null)
             {
                 return HttpNotFound();
@@ -81,15 +87,15 @@ namespace PhotoSharingApp.Controllers
                 }
 
             }
-            context.Photos.Add(photo);
+            context.Add<Photo>(photo);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
 
             public ActionResult Delete(int id)
         {
-            Photo photo =
-   context.Photos.Find(id);
+            
+Photo photo = context.FindPhotoById(id);
             if (photo == null)
             {
                 return HttpNotFound();
@@ -102,9 +108,9 @@ namespace PhotoSharingApp.Controllers
         public ActionResult DeleteConfirmed
     (int id)
         {
-            Photo photo =
-   context.Photos.Find(id);
-            context.Photos.Remove(photo);
+       
+  Photo photo = context.FindPhotoById(id);
+            context.Delete<Photo>(photo);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -113,8 +119,7 @@ namespace PhotoSharingApp.Controllers
         public FileContentResult GetImage(int id)
         {
 
-            Photo photo =
-   context.Photos.Find(id);
+            Photo photo = context.FindPhotoById(id);
             if (photo != null)
             {
                 return File(photo.PhotoFile,

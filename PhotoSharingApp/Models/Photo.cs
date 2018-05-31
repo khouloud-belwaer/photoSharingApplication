@@ -12,7 +12,7 @@ namespace PhotoSharingApp.Models
         public int PhotoID { get; set; }
         [Required]
         public String Title { get; set; }
-        [DisplayName("Picture")]
+        [DisplayName("Description")]
         [DataType(DataType.MultilineText)]
         public String Description { get; set; }
         [DataType(DataType.DateTime)]
