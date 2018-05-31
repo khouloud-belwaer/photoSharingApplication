@@ -1,4 +1,4 @@
-﻿using PhotoSharingApp.Model;
+﻿using PhotoSharingApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace PhotoSharingApp.Model
+namespace PhotoSharingApp.Models
 {
     public class PhotoSharingInitializer : DropCreateDatabaseAlways<PhotoSharingContext> 
     {

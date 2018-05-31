@@ -1,14 +1,6 @@
-﻿@model PhotoSharingApp.Model.Photo
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
+﻿@model PhotoSharingApp.Models.Photo
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     <title>
         Welcome to Adventure Works
         Photo Sharing
@@ -21,11 +13,12 @@
             sharing! Use this site to share
             your adventures.
         </p> 
-        <h2>Latest Photos</h2>
-        @Html.ActionLink("_PhotoGallery",
-   "Photo", new { number = 3 })
-        
+        <h2>Latest Photos</h2> 
+        @Html.Action("_PhotoGallery","Photo", new { number = 3 })
+
+
     </div>
     
 </body>
 </html>
+

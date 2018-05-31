@@ -1,21 +1,22 @@
-﻿@model PhotoSharingApp.Model.Photo
-<!DOCTYPE html>
+﻿ @model PhotoSharingApp.Models.Photo
+
 
 <html>
 <head>
     <title>All Photos</title>
+    
+  
 </head>
-<body>
-    <div>
-
-        <h2>All Photos</h2>
-        <p>
-            @Html.ActionLink("Add a Photo",
+<body >
+<div>
+    <h2>All Photos</h2>
+    <p>
+        @Html.ActionLink("Add a Photo",
       "Create", "Photo")
-        </p>
-        <p>
-            @Html.ActionLink("_PhotoGallery", "_PhotoGallery", "Photo")
-        </p>
-   
+    </p>
+    @Html.Action("_PhotoGallery", "Photo")
+      
+</div>
+
 </body>
 </html>

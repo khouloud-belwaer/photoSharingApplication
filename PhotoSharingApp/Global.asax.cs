@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
-using PhotoSharingApp.Model;
+using PhotoSharingApp.Models;
 
 namespace PhotoSharingApp
 {

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace PhotoSharingApp.Model
+namespace PhotoSharingApp.Models
 {
     public class Photo
     {

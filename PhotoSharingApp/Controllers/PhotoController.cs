@@ -1,4 +1,4 @@
-﻿using PhotoSharingApp.Model;
+﻿using PhotoSharingApp.Models;
 using System.Collections.Generic;
 using System.Globalization;
 using System.ComponentModel;
@@ -15,8 +15,9 @@ namespace PhotoSharingApp.Controllers
     [ValueReporter]
     public class PhotoController : Controller
     {
-        PhotoSharingContext context = new PhotoSharingContext();
-       
+        private PhotoSharingContext context =
+    new PhotoSharingContext();
+
         public ActionResult Index()
         {
             return View("Index");
@@ -24,9 +25,9 @@ namespace PhotoSharingApp.Controllers
 
         [ChildActionOnly]
         public ActionResult _PhotoGallery
-  (int number = 0)
+   (int number = 0)
         {
-            List<Photo> photos = new List<Photo>();
+            List<Photo> photos;
             if (number == 0)
             {
                 photos = context.Photos.ToList();
@@ -41,16 +42,19 @@ namespace PhotoSharingApp.Controllers
             return PartialView("_PhotoGallery",
    photos);
         }
+
+
         public ActionResult Display(int id)
         {
             Photo photo =
-    context.Photos.Find(id);
+                   context.Photos.Find(id);
             if (photo == null)
             {
                 return HttpNotFound();
             }
             return View("Display", photo);
         }
+
         public ActionResult Create()
         {
             Photo photo = new Photo();
@@ -61,55 +65,60 @@ namespace PhotoSharingApp.Controllers
         [HttpPost]
         public ActionResult Create(Photo photo, HttpPostedFileBase image)
         {
-                photo.CreatedDate= DateTime.Now;
-            if (ModelState.IsValid)
-           {
-               if (image!=null)                {
-                   photo.ImageMimeType = image.ContentType;
-                   photo.PhotoFile = new byte[image.ContentLength];
-                    image.InputStream.Read(photo.PhotoFile,0,image.ContentLength);
-                    context.Photos.Add(photo);
-                    context.SaveChanges();
-
-            return RedirectToAction("Index");                }
-                return RedirectToAction("Index");
-           }            else
+            photo.CreatedDate = DateTime.Now;
+            if (!ModelState.IsValid)
             {
                 return View("Create", photo);
             }
-         }
-
-        public ActionResult Delete(int id)
-        {
-            List<Photo> photos = context.Photos.ToList();
-            var verif = photos.Find(photo => photo.PhotoID == id);
-            if (verif==null)
-            {
-                return HttpNotFound();
-          }
             else
             {
-                return View("Delete", verif);
+                if (image != null)
+                {
+
+                    photo.ImageMimeType = image.ContentType;
+                    photo.PhotoFile = new byte[image.ContentLength];
+                    image.InputStream.Read(photo.PhotoFile, 0, image.ContentLength);
+                }
+
             }
+            context.Photos.Add(photo);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
-       [HttpPost]
-        [ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+
+            public ActionResult Delete(int id)
         {
-            List<Photo> photos = context.Photos.ToList();
-           var verif = photos.Find(photo => photo.PhotoID == id);
-           context.Entry(verif).State = EntityState.Deleted;
-           context.SaveChanges();
-           return RedirectToAction("Index");
+            Photo photo =
+   context.Photos.Find(id);
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Delete", photo);
         }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed
+    (int id)
+        {
+            Photo photo =
+   context.Photos.Find(id);
+            context.Photos.Remove(photo);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+       
+         
         public FileContentResult GetImage(int id)
         {
-            List<Photo> photos = context.Photos.ToList();
-            var verif = photos.Find(photo => photo.PhotoID == id);
-            if(verif!=null)
+
+            Photo photo =
+   context.Photos.Find(id);
+            if (photo != null)
             {
-               
-               return (new FileContentResult(verif.PhotoFile, verif.ImageMimeType));
+                return File(photo.PhotoFile,
+                   photo.ImageMimeType);
             }
             else
             {
