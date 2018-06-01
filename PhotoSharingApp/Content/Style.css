@@ -36,24 +36,10 @@ p {
 	transform-style: inherit;
 }
 
-img {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  width: 320px;
-  height: 240px;
-  transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(240,230,220, .7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}
 
-img:last-of-type {
-  transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
-}
 
 .slide:before {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -63,7 +49,7 @@ img:last-of-type {
 }
 
 .title {
-  width: 53%;
+  width: 50%;
   padding: 5%;
   border-radius: 5px;
   background: rgba(240,230,220, .7);
@@ -92,9 +78,8 @@ img:last-of-type {
 }
 
 #title {
-  background-image: url("http://www.fondsecran.eu/a/get_photo/83248/1920/1080");
+  background-image: url("https://www.2mprofessional.com/wp-content/uploads/2015/05/coffee-group.jpg");
   z-index:2;
-  color:#800000;
 }
 
 #title h1 {
@@ -104,12 +89,12 @@ img:last-of-type {
 }
 
 #slide1:before {
-  background-image: url("http://ns328286.ip-37-187-113.eu/ew/wallpapers/960x540/02297_960x540.jpg");
+  background-image: url("https://carnetdetipiment.files.wordpress.com/2013/10/coucher-de-soleil-3.png");
   transform: translateZ(-1px) scale(2);
 }
 
 #slide2 {
-  background-image: url("http://ns328286.ip-37-187-113.eu/ew/wallpapers/960x540/02297_960x540.jpg");
+  background-image: url("https://lorempixel.com/640/480/abstract/3/");
   z-index:2;
 }
 

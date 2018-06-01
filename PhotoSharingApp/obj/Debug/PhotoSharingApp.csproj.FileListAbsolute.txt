@@ -40,3 +40,5 @@ C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharing
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.pdb
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.xml
+C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.dll
+C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.xml

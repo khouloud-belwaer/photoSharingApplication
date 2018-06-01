@@ -1,22 +1,36 @@
-﻿ @model PhotoSharingApp.Models.Photo
-
+﻿@model PhotoSharingApp.Models.Photo
+@{ Layout = null;}
+<!DOCTYPE html>
 
 <html>
+
 <head>
     <title>All Photos</title>
-    
-  
+    <link type="text/css" rel="stylesheet" href="~/content/Style.css" />
+   
+
+
+
 </head>
-<body >
-<div>
-    <h2>All Photos</h2>
+
+
+<body>
+
+    <div id="title" class="slide header">
+        <h1>All Photos</h1>
+
+    </div>
+      
+    <div id="slide1" class="slide">
     <p>
+    <b>
         @Html.ActionLink("Add a Photo",
       "Create", "Photo")
-    </p>
-    @Html.Action("_PhotoGallery", "Photo")
-      
-</div>
+    </b>
 
-</body>
+
+</p>
+@Html.Action("_PhotoGallery", "Photo")</div>
+   
+    </body>
 </html>

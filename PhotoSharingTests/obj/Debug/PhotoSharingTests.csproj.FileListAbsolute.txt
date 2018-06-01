@@ -14,7 +14,6 @@ C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\roslyn\VBC
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingTests.dll.config
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingTests.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingTests.pdb
-C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingApp.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\System.Web.Helpers.dll
@@ -36,6 +35,5 @@ C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\System.Web
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\System.Web.Optimization.xml
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\EntityFramework.xml
-C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\obj\Debug\PhotoSharingTests.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingTests\obj\Debug\PhotoSharingTests.pdb

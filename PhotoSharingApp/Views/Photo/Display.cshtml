@@ -1,5 +1,7 @@
 ﻿@model PhotoSharingApp.Models.Photo
-
+@{
+    Layout = null;
+}
 
 <!DOCTYPE html>
 
@@ -7,39 +9,43 @@
 <head>
     <meta name="viewport" content="width=device-width" />
    <title> Photo: @Model.Title </title>
+    <link type="text/css" rel="stylesheet" href="~/content/Style.css" />
 </head>
 <body>
-    <div>
+   
         <h4>Photo</h4>
         <hr />
-        <div class="display-field">
-            <h2>"@Model.Title"</h2> 
-                @if (Model.PhotoFile != null)
-                {
-                    <img width="800" src="@Url.Action("GetImage", "Photo",  
+    <div id="slide1" class="slide">
+        <h2>"@Model.Title"</h2>
+        @if (Model.PhotoFile != null)
+            {
+            <img width="800" src="@Url.Action("GetImage", "Photo",
    new { id=Model.PhotoID }) " />
-   <p> 
-   @Html.DisplayFor(      
-model =>  
-      model.Description) 
-</p> 
-<p> 
-   @Html.DisplayNameFor( model => model.UserName): 
-   @Html.DisplayFor( model => model.UserName) 
-</p> 
-<p> 
-   @Html.DisplayNameFor( 
-      model => model.CreatedDate): 
-   @Html.DisplayFor( 
-      model => model.CreatedDate) 
-</p>  
-                }
-                
-           
+            <p>
+                @Html.DisplayFor(
+model =>
+      model.Description)
+            </p>
+                <p>
+                    @Html.DisplayNameFor(model => model.UserName):
+                    @Html.DisplayFor(model => model.UserName)
+                </p>
+                <p>
+                    @Html.DisplayNameFor(
+      model => model.CreatedDate):
+                    @Html.DisplayFor(
+      model => model.CreatedDate)
+                </p>
+        }
+
+
     </div>
-    <p> 
+
+    
+    
+    <footer> 
    @Html.ActionLink("Back to List", "Index") 
-</p> 
-        </div> 
+</footer> 
+       
 </body>
 </html>
