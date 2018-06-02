@@ -72,6 +72,7 @@ namespace PhotoSharingApp.Controllers
             ViewBag.PhotoId = PhotoId;
             return PartialView("_CommentsForPhoto", comments.ToList());
         }
+       
     }
    
 } 
