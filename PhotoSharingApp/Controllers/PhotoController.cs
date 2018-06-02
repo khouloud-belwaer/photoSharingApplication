@@ -101,21 +101,15 @@ Photo photo = context.FindPhotoById(id);
             {
                 return HttpNotFound();
             }
-            return View("Delete", photo);
+            else
+            {
+                context.Delete<Photo>(photo);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
 
-        [HttpPost]
-        [ActionName("Delete")]
-        public ActionResult DeleteConfirmed
-    (int id)
-        {
-       
-  Photo photo = context.FindPhotoById(id);
-            context.Delete<Photo>(photo);
-            context.SaveChanges();
-            return RedirectToAction("Index");
-        }
-       
+
          
         public FileContentResult GetImage(int id)
         {

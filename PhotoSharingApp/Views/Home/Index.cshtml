@@ -1,24 +1,38 @@
 ﻿@model PhotoSharingApp.Models.Photo
+
+@{ Layout = null;}
+<!DOCTYPE html>
+
 <html>
+
 <head>
     <title>
         Welcome to Adventure Works
         Photo Sharing
-    </title> 
+    </title>
+    <link type="text/css" rel="stylesheet" href="~/content/Style.css" />
 </head>
 <body>
-    <div>
-        <p>
+    <div id="title" class="slide header">
+
+        <h1>
             Welcome to Adventure Works Photo
-            sharing! Use this site to share
+            sharing!
+        </h1>
+        <h2 >
+            Use this site to share
             your adventures.
-        </p> 
-        <h2>Latest Photos</h2> 
-        @Html.Action("_PhotoGallery","Photo", new { number = 3 })
+        </h2>
+
+    </div>
+
+    <div id="slide1" class="slide">
+        <h1>Latest Photos</h1>
+        @Html.Action("_PhotoGallery", "Photo", new { number = 3 })
 
 
     </div>
-    
+
 </body>
 </html>
 
