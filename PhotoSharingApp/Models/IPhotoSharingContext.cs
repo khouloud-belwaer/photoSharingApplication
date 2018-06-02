@@ -13,6 +13,7 @@ namespace PhotoSharingApp.Models
         int SaveChanges();
         T Add<T>(T entity) where T : class;
         Photo FindPhotoById(int ID);
+        Photo FindPhotoByTitle(String Title);
         Commentaire FindCommentById(int ID);
         T Delete<T>(T entity) where T : class;
     }

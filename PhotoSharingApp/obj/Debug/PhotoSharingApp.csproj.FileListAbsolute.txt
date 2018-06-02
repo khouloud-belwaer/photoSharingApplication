@@ -42,3 +42,6 @@ C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.dl
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.xml
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.dll
 C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.xml
+C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.WebActivator.dll
+C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\WebActivatorEx.dll
+C:\Users\khouloud\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.WebActivator.xml

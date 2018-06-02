@@ -61,6 +61,15 @@ namespace PhotoSharingApp.Controllers
             }
             return View("Display", photo);
         }
+        public ActionResult DisplayByTitle(string title)
+        {
+            Photo photo = context.FindPhotoByTitle(title);
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Display", photo);
+        }
 
         public ActionResult Create()
         {
@@ -110,11 +119,12 @@ Photo photo = context.FindPhotoById(id);
         }
 
 
-         
-        public FileContentResult GetImage(int id)
-        {
 
-            Photo photo = context.FindPhotoById(id);
+        public FileContentResult GetImage
+   (int id)
+        {
+           
+   Photo photo = context.FindPhotoById(id);
             if (photo != null)
             {
                 return File(photo.PhotoFile,
